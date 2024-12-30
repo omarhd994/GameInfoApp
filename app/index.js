@@ -1,6 +1,6 @@
 import { Main } from "../component/Main";
 
-export default function App() { 
+export default function Index() { 
     return (
         <Main/>
     );
