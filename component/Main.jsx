@@ -5,7 +5,7 @@ import { AnimatedGameCard } from './GameCard';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Logo } from './Logo';
 import { Link } from 'expo-router';
-import CircleInfoIcon from './Icons';
+import { CircleInfoIcon } from './Icons';
 
 
 export function Main() {
