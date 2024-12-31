@@ -1,15 +1,37 @@
-import { useEffect, useRef } from "react";
-import { View, Text, Image, StyleSheet, Animated } from "react-native"
+import { Link } from "expo-router";
+import { useEffect, useRef, useState } from "react";
+import { View, Text, Image, StyleSheet, Animated, Pressable } from "react-native"
+
+
 export const GameCard = ({ game }) => {
+  const [pressed, setPressed] = useState(false); // État pour gérer l'effet de pression
+
   return (
-        <View key={game.id} style={styles.card}>
-          <Image source={{ uri: game.thumbnail }} style={styles.image}/>
+    <Link href={`/${game.short_description}`} asChild>
+    <Pressable
+      onPressIn={() => setPressed(true)} // Quand on appuie
+      onPressOut={() => setPressed(false)} // Quand on relâche
+      style={{
+        margin: 10, // Padding autour du conteneur gris
+        borderRadius: 10,
+        borderColor: 'black',
+        backgroundColor: 'gray',
+        opacity: pressed ? 0.4 : 0.5, // Opacité au click
+      }}
+    >
+      <View key={game.id} style={styles.card}>
+        <Image source={{ uri: game.thumbnail }} style={styles.image} />
+        <View style={{ color: 'white' }}>
           <Text style={styles.title}>{game.title}</Text>
           <Text style={styles.description}>{game.short_description}</Text>
           <Text style={styles.platform}>{game.platform}</Text>
           <Text style={styles.releasedate}>{game.release_date}</Text>
-        </View>  )
-}
+        </View>
+      </View>
+    </Pressable>
+  </Link>
+);
+};
 
 export function AnimatedGameCard({game, index}) {
     const opacity = useRef(new Animated.Value(0)).current;

@@ -20,7 +20,8 @@ export function Main() {
 
   
   return (
-<View style={{ paddingTop: insets.top, paddingBottom: insets.bottom }}>
+<View style={{ paddingTop: insets.top, paddingBottom: insets.bottom }}> 
+  <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginHorizontal: 20,}}>
     <View style={{ marginBottom: 20, alignItems: 'center',}}>
       <Logo />
     </View>
@@ -30,6 +31,7 @@ export function Main() {
             <CircleInfoIcon />
           </Pressable>
     </Link>
+  </View>
 
       {games.length === 0 ? (
           <ActivityIndicator color={'red'} size={'large'}/>
