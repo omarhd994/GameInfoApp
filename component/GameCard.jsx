@@ -12,7 +12,7 @@ export const GameCard = ({ game }) => {
       onPressIn={() => setPressed(true)} // Quand on appuie
       onPressOut={() => setPressed(false)} // Quand on relâche
       style={{
-        margin: 10, // Padding autour du conteneur gris
+        margin: 12, // Padding autour du conteneur gris
         borderRadius: 10,
         borderColor: 'black',
         backgroundColor: 'gray',

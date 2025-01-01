@@ -1,23 +1,39 @@
-import { Slot } from "expo-router";
-import { View } from "react-native";
+import { Link, Stack } from "expo-router";
+import { Pressable, View } from "react-native";
+import { Logo } from "../component/Logo";
+import { CircleInfoIcon } from "../component/Icons";
 
 
 export default function Layout() {
 
   return(
     <View style={Style.Container}>
-      <Slot/>
+      <Stack
+        screenOptions={{
+        headerStyle: { backgroundColor: 'black' },
+        headerTintColor:'yellow',
+        headerTitle: '',
+        headerLeft: () => <Logo />,
+        headerRight: () => (
+          <Link asChild href="/about">
+            <Pressable>
+              <CircleInfoIcon />
+            </Pressable>
+          </Link>
+        )
+        }}
+      />
     </View>
   )
 };
 
 
+
+
+
 const Style = {
   Container: {
     flex: 1,
-    backgroundColor: '#000',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   Title: {
     color: 'white',
