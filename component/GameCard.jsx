@@ -7,7 +7,7 @@ export const GameCard = ({ game }) => {
   const [pressed, setPressed] = useState(false); // État pour gérer l'effet de pression
 
   return (
-    <Link href={`/${game.short_description}`} asChild>
+    <Link href={`/${game.short_description }`} asChild>
     <Pressable
       onPressIn={() => setPressed(true)} // Quand on appuie
       onPressOut={() => setPressed(false)} // Quand on relâche
