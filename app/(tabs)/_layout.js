@@ -1,5 +1,4 @@
 import { Tabs } from "expo-router";
-import { View } from "react-native-web";
 import { HomeIcon, InfoIcon } from "../../component/Icons";
 
 
@@ -16,14 +15,14 @@ export default function TabsLayout() {
 
                 <Tabs.Screen 
                 name="index" 
-                oprtions={{
+                options={{
                 title: 'Home',
                 tabBarIcon: ({color}) => <HomeIcon color={color}/>,
             }}
             />
                 <Tabs.Screen 
                 name="about" 
-                oprtions={{
+                options={{
                 title: 'About',
                 tabBarIcon: ({color}) => <InfoIcon color={color}/>,
             }}
